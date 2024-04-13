@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d842a1dee7694c4a9d49a0d920ed4be, type: 3}
+  m_Name: RockThrow
+  m_EditorClassIdentifier: 
+  attackName: Rock Throw
+  type: 5
+  animation: 0
+  baseDamage: 15
+  baseSpeed: 0
+  playerDefense: 0
+  playerAttack: 0
+  enemyDefense: 0
+  enemyAttack: 0
+  bpCost: 10
+  attackerFX: {fileID: 1462327970484030, guid: f01c1eba69de19e44b04d8d651aaac37, type: 3}
+  hitFX: {fileID: 1462327970484030, guid: f01c1eba69de19e44b04d8d651aaac37, type: 3}

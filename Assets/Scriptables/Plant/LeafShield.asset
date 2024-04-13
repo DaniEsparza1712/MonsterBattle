@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d842a1dee7694c4a9d49a0d920ed4be, type: 3}
+  m_Name: LeafShield
+  m_EditorClassIdentifier: 
+  attackName: Leaf Shield
+  type: 4
+  animation: 1
+  baseDamage: 8
+  baseSpeed: 0
+  playerDefense: 0
+  playerAttack: 0
+  enemyDefense: 0
+  enemyAttack: 0
+  bpCost: 5
+  attackerFX: {fileID: 4772634663576830964, guid: e1385af346f4e624eb313ec1ea4fcd7e, type: 3}
+  hitFX: {fileID: 0}

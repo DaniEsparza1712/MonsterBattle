@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d842a1dee7694c4a9d49a0d920ed4be, type: 3}
+  m_Name: Bite
+  m_EditorClassIdentifier: 
+  attackName: Bite
+  type: 2
+  animation: 0
+  baseDamage: 13
+  baseSpeed: 0
+  playerDefense: 0
+  playerAttack: 0
+  enemyDefense: 0
+  enemyAttack: -1
+  bpCost: 7
+  attackerFX: {fileID: 100004, guid: fb7b0526ade434043b350a180d741cf3, type: 3}
+  hitFX: {fileID: 0}
