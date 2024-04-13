@@ -15,7 +15,7 @@ MonoBehaviour:
   attackName: PsychicBeam
   type: 1
   animation: 0
-  baseDamage: 20
+  baseDamage: 180
   baseSpeed: 0
   playerDefense: 0
   playerAttack: 0
@@ -23,4 +23,4 @@ MonoBehaviour:
   enemyAttack: 0
   bpCost: 20
   attackerFX: {fileID: 1590415177872986601, guid: acdb90624a404aa438447006f1026065, type: 3}
-  hitFX: {fileID: 0}
+  hitFX: {fileID: 1247311384876784, guid: 4adffb0018aeda44e9263f901167af1f, type: 3}

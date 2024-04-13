@@ -296,13 +296,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monsterName: Thornbrawn
-  type: 0
-  defense: 0
-  attack: 0
+  type: 4
+  defense: 70
+  attack: 83
   speed: 0
   attacks:
   - {fileID: 11400000, guid: 1c6c337f9ff48344b879325ce8c76fde, type: 2}
-  - {fileID: 11400000, guid: 509b54e69c9d59740b79e529cf6e565c, type: 2}
+  - {fileID: 11400000, guid: 4715a694d7f40c34c9479670bd7cc338, type: 2}
   - {fileID: 11400000, guid: 4173fdecd9055124eb358e6a21fb5fa2, type: 2}
   - {fileID: 11400000, guid: 592906d65b843e2489036cef5d9b1957, type: 2}
 --- !u!114 &-2037488924296957381
@@ -331,7 +331,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54a64d23d9627f34f9d7f5f26f9440e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalBP: 150
+  totalBP: 110
   currentBP: 0
 --- !u!1 &3852874285576004348
 GameObject:

@@ -520,15 +520,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monsterName: Titanstone
-  type: 0
-  defense: 0
-  attack: 0
+  type: 5
+  defense: 90
+  attack: 80
   speed: 0
   attacks:
   - {fileID: 11400000, guid: d2b76ea7692c6b94d93002d288713e93, type: 2}
   - {fileID: 11400000, guid: 723b59ecfdd42f9409b7e14b4a578c47, type: 2}
   - {fileID: 11400000, guid: 0ef03ea07edd6ba4b9cb0d9d1f8a12bc, type: 2}
-  - {fileID: 11400000, guid: 1c6c337f9ff48344b879325ce8c76fde, type: 2}
+  - {fileID: 11400000, guid: 4715a694d7f40c34c9479670bd7cc338, type: 2}
 --- !u!114 &-4866119092199447210
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -541,7 +541,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25a9d2085feb5f34bbc15d211b4843e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalLife: 130
+  totalLife: 120
   currentLife: 0
 --- !u!114 &-5706134542688055592
 MonoBehaviour:
@@ -555,7 +555,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54a64d23d9627f34f9d7f5f26f9440e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalBP: 160
+  totalBP: 115
   currentBP: 0
 --- !u!1 &5407188353277429452
 GameObject:

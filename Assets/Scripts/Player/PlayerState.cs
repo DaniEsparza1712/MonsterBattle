@@ -11,6 +11,7 @@ public class PlayerState : MonoBehaviour
         Attacking,
         AttackingIdle,
         Waiting,
+        WaitingHit,
         GettingHit
     }
     public State currentState;
@@ -18,13 +19,16 @@ public class PlayerState : MonoBehaviour
     public UnityEvent onChangeToAttacking;
     public UnityEvent onChangeToAttackingIdle;
     public UnityEvent onChangeToWaiting;
+    public UnityEvent onChangeToWaitingHit;
     public UnityEvent onChangeGettingHit;
     [Header("State Vars")] 
+    [SerializeField]
     private float _timer = 0;
     public float attackingTime;
 
     public void ChangeState(State state)
     {
+        _timer = 0;
         switch (state)
         {
             case State.Selecting:
@@ -33,7 +37,6 @@ public class PlayerState : MonoBehaviour
                 break;
             case State.Attacking:
                 currentState = State.Attacking;
-                _timer = 0;
                 onChangeToAttacking.Invoke();
                 break;
             case State.AttackingIdle:
@@ -43,6 +46,10 @@ public class PlayerState : MonoBehaviour
             case State.Waiting:
                 currentState = State.Waiting;
                 onChangeToWaiting.Invoke();
+                break;
+            case State.WaitingHit:
+                currentState = State.WaitingHit;
+                onChangeToWaitingHit.Invoke();
                 break;
             case State.GettingHit:
                 currentState = State.GettingHit;
@@ -59,12 +66,27 @@ public class PlayerState : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (currentState == State.Attacking)
+        if (currentState == State.Attacking || currentState == State.AttackingIdle || currentState == State.WaitingHit || currentState == State.GettingHit)
         {
             _timer += Time.deltaTime;
-            if(_timer >= attackingTime)
-                ChangeState(State.Selecting);
+            if (_timer >= attackingTime)
+            {
+                switch (currentState)
+                {
+                    case State.Attacking:
+                        ChangeState(State.AttackingIdle);
+                        break;
+                    case State.AttackingIdle:
+                        ChangeState(State.Waiting);
+                        break;
+                    case State.WaitingHit:
+                        ChangeState(State.GettingHit);
+                        break;
+                    case State.GettingHit:
+                        ChangeState(State.Selecting);
+                        break;
+                }
+            }
         }
-        
     }
 }

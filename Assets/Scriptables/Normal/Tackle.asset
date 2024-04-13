@@ -15,7 +15,7 @@ MonoBehaviour:
   attackName: Tackle
   type: 0
   animation: 0
-  baseDamage: 5
+  baseDamage: 90
   baseSpeed: 0
   playerDefense: 0
   playerAttack: 0
@@ -23,4 +23,4 @@ MonoBehaviour:
   enemyAttack: 0
   bpCost: 0
   attackerFX: {fileID: 100000, guid: 3156817f64ec68948ad6bb26569b9ef5, type: 3}
-  hitFX: {fileID: 0}
+  hitFX: {fileID: 100000, guid: 3156817f64ec68948ad6bb26569b9ef5, type: 3}

@@ -15,12 +15,12 @@ MonoBehaviour:
   attackName: Leaf Shield
   type: 4
   animation: 1
-  baseDamage: 8
+  baseDamage: 60
   baseSpeed: 0
-  playerDefense: 0
+  playerDefense: 11
   playerAttack: 0
   enemyDefense: 0
   enemyAttack: 0
-  bpCost: 5
+  bpCost: 27
   attackerFX: {fileID: 4772634663576830964, guid: e1385af346f4e624eb313ec1ea4fcd7e, type: 3}
-  hitFX: {fileID: 0}
+  hitFX: {fileID: 4772634663576830964, guid: e1385af346f4e624eb313ec1ea4fcd7e, type: 3}

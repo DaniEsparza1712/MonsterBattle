@@ -15,7 +15,7 @@ MonoBehaviour:
   attackName: Leaf Blade
   type: 4
   animation: 0
-  baseDamage: 20
+  baseDamage: 160
   baseSpeed: 0
   playerDefense: 0
   playerAttack: 0
@@ -23,4 +23,4 @@ MonoBehaviour:
   enemyAttack: 0
   bpCost: 15
   attackerFX: {fileID: 2353600328335836179, guid: ceec7516237b4104b94300043ca39784, type: 3}
-  hitFX: {fileID: 0}
+  hitFX: {fileID: 2353600328335836179, guid: ceec7516237b4104b94300043ca39784, type: 3}

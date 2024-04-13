@@ -46,19 +46,16 @@ public class AttackButton : MonoBehaviour
         if (bpSystem.currentBP >= attack.bpCost)
         {
             PlayAnim();
-            ProcessAttackData();
             ChangeState();
-            
+            SendAttack();
             bpSystem.SubtractBP(attack.bpCost);
         }
     }
 
-    private void ProcessAttackData()
+    private void SendAttack()
     {
-        var opponent = _playerManager.opponent;
-        var opponentLife = opponent.activeMonster.GetComponent<LifeSystem>();
-    
-        opponentLife.SubtractLife(attack.baseDamage);
+        var manager = GameObject.Find("Manager").GetComponent<Manager>();
+        manager.SendAttack(attack);
     }
 
     private void ChangeState()

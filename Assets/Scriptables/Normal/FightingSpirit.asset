@@ -15,12 +15,12 @@ MonoBehaviour:
   attackName: Fighting Spirit
   type: 0
   animation: 1
-  baseDamage: 9
+  baseDamage: 60
   baseSpeed: 0
   playerDefense: 0
-  playerAttack: 1
+  playerAttack: 15
   enemyDefense: 0
   enemyAttack: 0
-  bpCost: 7
+  bpCost: 25
   attackerFX: {fileID: 100006, guid: 60bc526f4be1e044ab9e46340b82ffb3, type: 3}
-  hitFX: {fileID: 0}
+  hitFX: {fileID: 1995403933065894, guid: 4961a16ba01e09547be3e1c9d16d5ad0, type: 3}

@@ -15,7 +15,7 @@ MonoBehaviour:
   attackName: BlackHole
   type: 2
   animation: 0
-  baseDamage: 20
+  baseDamage: 200
   baseSpeed: 0
   playerDefense: 0
   playerAttack: 0
@@ -23,4 +23,4 @@ MonoBehaviour:
   enemyAttack: 0
   bpCost: 20
   attackerFX: {fileID: 100000, guid: 3d4907e6bd39f474b8fd8220920e65c4, type: 3}
-  hitFX: {fileID: 0}
+  hitFX: {fileID: 1965343156803978, guid: aa8d6482d70a23445b4b2a928ed1b845, type: 3}

@@ -14,14 +14,7 @@ public class PlayerUIManager : MonoBehaviour
     private void Start()
     {
         _playerManager = GetComponent<PlayerManager>();
-        _monster = _playerManager.activeMonster.GetComponent<Monster>();
-        lifeBar.lifeSystem = _monster.gameObject.GetComponent<LifeSystem>();
-        lifeBar.StartUp();
-        if (bpBar)
-        {
-            bpBar.bpSystem = _monster.gameObject.GetComponent<BPSystem>();
-            bpBar.StartUp();
-        }
+        GetMonsterInfo();
         if(attackButtonContainer)
             FillOutAttacks();
     }
@@ -30,6 +23,18 @@ public class PlayerUIManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void GetMonsterInfo()
+    {
+        _monster = _playerManager.activeMonster.GetComponent<Monster>();
+        lifeBar.lifeSystem = _monster.gameObject.GetComponent<LifeSystem>();
+        lifeBar.StartUp();
+        if (bpBar)
+        {
+            bpBar.bpSystem = _monster.gameObject.GetComponent<BPSystem>();
+            bpBar.StartUp();
+        }
     }
 
     public void FillOutAttacks()

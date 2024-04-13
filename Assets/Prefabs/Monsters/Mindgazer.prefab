@@ -183,7 +183,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2507076689462209081}
@@ -985,9 +985,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monsterName: Mindgazer
-  type: 0
-  defense: 0
-  attack: 0
+  type: 1
+  defense: 90
+  attack: 60
   speed: 0
   attacks:
   - {fileID: 11400000, guid: 4715a694d7f40c34c9479670bd7cc338, type: 2}

@@ -7,7 +7,7 @@ public class LifeSystem : MonoBehaviour
     public int totalLife;
     public int currentLife;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         currentLife = totalLife;
     }

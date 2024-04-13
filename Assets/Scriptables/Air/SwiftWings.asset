@@ -15,12 +15,12 @@ MonoBehaviour:
   attackName: Swift Wings
   type: 3
   animation: 0
-  baseDamage: 10
+  baseDamage: 90
   baseSpeed: 0
   playerDefense: 0
   playerAttack: 0
   enemyDefense: 0
   enemyAttack: 0
-  bpCost: 15
+  bpCost: 11
   attackerFX: {fileID: 6710139492206580332, guid: 95b8d3d65b5d7f1409c4ed1723887826, type: 3}
-  hitFX: {fileID: 0}
+  hitFX: {fileID: 8525990746615576120, guid: b85d21f3b8fed714bacf0c4fd50fa512, type: 3}
