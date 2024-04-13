@@ -179,6 +179,12 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
+  - m_Name: Die
+    m_Type: 9
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -247,6 +253,7 @@ AnimatorStateMachine:
   - {fileID: 1556825690520732677}
   - {fileID: -1918157471007321821}
   - {fileID: -8225723341722013611}
+  - {fileID: 3421441018939954362}
   m_EntryTransitions: []
   m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []
@@ -275,6 +282,31 @@ AnimatorStateTransition:
   m_TransitionDuration: 0.07705095
   m_TransitionOffset: 0
   m_ExitTime: 9.590084e-10
+  m_HasExitTime: 0
+  m_HasFixedDuration: 1
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 1
+--- !u!1101 &3421441018939954362
+AnimatorStateTransition:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_Conditions:
+  - m_ConditionMode: 1
+    m_ConditionEvent: Die
+    m_EventTreshold: 0
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: -3702997474828619617}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 0
+  serializedVersion: 3
+  m_TransitionDuration: 0.1328572
+  m_TransitionOffset: 0
+  m_ExitTime: 0.89785707
   m_HasExitTime: 0
   m_HasFixedDuration: 1
   m_InterruptionSource: 0

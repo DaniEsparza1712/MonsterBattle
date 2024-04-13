@@ -455,9 +455,9 @@ MonoBehaviour:
   spawnPoint: {fileID: 1254505510}
   activeMonster: {fileID: 0}
   monsters:
+  - {fileID: 3843704267178131297, guid: e9c49f1925b4019419ba29bec8d9264b, type: 3}
   - {fileID: 7351967303721913799, guid: f93ee99791371274bb5fc0c4dfd20d89, type: 3}
-  - {fileID: 4335483586587273440, guid: dec67845266eb1d4e99b4b2a2f7e3d9e, type: 3}
-  - {fileID: 5809034718694644260, guid: d27ce1ef25d8cc54588a65c7c15961ac, type: 3}
+  - {fileID: 6838752322613631778, guid: 60315e10ebe78ef48a314419540ef375, type: 3}
   playerState: {fileID: 307317674}
   changeMonsterEvent:
     m_PersistentCalls:
@@ -529,6 +529,7 @@ MonoBehaviour:
   lifeBar: {fileID: 1022395198}
   bpBar: {fileID: 1004128868}
   attackButtonContainer: {fileID: 747402855}
+  monsterName: {fileID: 0}
   attackButtonPrefab: {fileID: 7821555441414188017, guid: aa806b0a2a0dd0a4ca691a653ccb6d03, type: 3}
 --- !u!114 &307317674
 MonoBehaviour:
@@ -660,6 +661,69 @@ MonoBehaviour:
       - m_Target: {fileID: 853650194}
         m_TargetAssemblyTypeName: Manager, Assembly-CSharp
         m_MethodName: ReceiveFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onEnd:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 747402854}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 680050070}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 814396403}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 703632351}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: ServerTest, Assembly-CSharp
+        m_MethodName: Close
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1357,8 +1421,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Monster
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c117fc73ffbaa07479cd71435fa4d4e9, type: 2}
+  m_sharedMaterial: {fileID: 6250014993263801103, guid: c117fc73ffbaa07479cd71435fa4d4e9, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1382,7 +1446,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 19.6
+  m_fontSize: 18.25
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1638,6 +1702,7 @@ GameObject:
   m_Component:
   - component: {fileID: 853650193}
   - component: {fileID: 853650194}
+  - component: {fileID: 853650195}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -1672,6 +1737,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf2991db9ba68b0459bd43cc5b5b2963, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serverTest: {fileID: 853650195}
   localPlayer: {fileID: 307317671}
   opponent: {fileID: 1644466825}
   attacks:
@@ -1712,6 +1778,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &853650195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 853650191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ed71c1142f52e1419b63c68b0aa0aaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &878446287
 GameObject:
   m_ObjectHideFlags: 0
@@ -2469,8 +2547,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Monster
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c117fc73ffbaa07479cd71435fa4d4e9, type: 2}
+  m_sharedMaterial: {fileID: 6250014993263801103, guid: c117fc73ffbaa07479cd71435fa4d4e9, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2494,7 +2572,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 19.6
+  m_fontSize: 18.25
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2728,8 +2806,8 @@ MonoBehaviour:
   spawnPoint: {fileID: 1919737143}
   activeMonster: {fileID: 0}
   monsters:
-  - {fileID: 3843704267178131297, guid: e9c49f1925b4019419ba29bec8d9264b, type: 3}
-  - {fileID: 6838752322613631778, guid: 60315e10ebe78ef48a314419540ef375, type: 3}
+  - {fileID: 5809034718694644260, guid: d27ce1ef25d8cc54588a65c7c15961ac, type: 3}
+  - {fileID: 4335483586587273440, guid: dec67845266eb1d4e99b4b2a2f7e3d9e, type: 3}
   - {fileID: 5130156568785483067, guid: 8da847e429b3e314a84c9264ba0d53d0, type: 3}
   playerState: {fileID: 1644466827}
   changeMonsterEvent:
@@ -2806,6 +2884,69 @@ MonoBehaviour:
   onChangeGettingHit:
     m_PersistentCalls:
       m_Calls: []
+  onEnd:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 747402854}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 680050070}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 814396403}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 703632351}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: ServerTest, Assembly-CSharp
+        m_MethodName: Close
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _timer: 0
   attackingTime: 0
 --- !u!114 &1644466828
@@ -2823,6 +2964,7 @@ MonoBehaviour:
   lifeBar: {fileID: 381200662}
   bpBar: {fileID: 0}
   attackButtonContainer: {fileID: 0}
+  monsterName: {fileID: 0}
   attackButtonPrefab: {fileID: 0}
 --- !u!1 &1699583868
 GameObject:

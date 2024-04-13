@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class PlayerUIManager : MonoBehaviour
@@ -8,6 +9,7 @@ public class PlayerUIManager : MonoBehaviour
     public LifeBar lifeBar;
     public BPBar bpBar;
     public RectTransform attackButtonContainer;
+    public TMP_Text monsterName;
     public GameObject attackButtonPrefab;
     private Monster _monster;
     // Start is called before the first frame update
@@ -30,6 +32,7 @@ public class PlayerUIManager : MonoBehaviour
         _monster = _playerManager.activeMonster.GetComponent<Monster>();
         lifeBar.lifeSystem = _monster.gameObject.GetComponent<LifeSystem>();
         lifeBar.StartUp();
+        
         if (bpBar)
         {
             bpBar.bpSystem = _monster.gameObject.GetComponent<BPSystem>();

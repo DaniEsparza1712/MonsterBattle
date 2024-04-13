@@ -18,7 +18,7 @@ MonoBehaviour:
   baseDamage: 60
   baseSpeed: 0
   playerDefense: 0
-  playerAttack: 15
+  playerAttack: 20
   enemyDefense: 0
   enemyAttack: 0
   bpCost: 25

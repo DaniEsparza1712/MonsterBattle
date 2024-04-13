@@ -5,6 +5,7 @@ using Random = UnityEngine.Random;
 
 public class Manager : MonoBehaviour
 {
+    public Server serverTest;
     public PlayerManager localPlayer;
     public PlayerManager opponent;
     public List<Attack> attacks = new List<Attack>();
@@ -24,6 +25,8 @@ public class Manager : MonoBehaviour
     {
         var index = AttacksManager.Instance.Attacks.IndexOf(attack);
         _localAttack = attack;
+        
+        //serverTest.SendToClient();
         onSendInfo.Invoke();
     }
 
@@ -42,6 +45,8 @@ public class Manager : MonoBehaviour
             opponent.activeMonster.GetComponent<Animator>().SetTrigger(attack.animation.ToString());
             Instantiate(attack.attackerFX, opponent.activeMonster.transform);
         }
+        
+        //serverTest.ReceiveFromClient();
     }
 
     public void ReceiveFX()

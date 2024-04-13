@@ -17,10 +17,10 @@ MonoBehaviour:
   animation: 0
   baseDamage: 30
   baseSpeed: 0
-  playerDefense: 16
-  playerAttack: 16
-  enemyDefense: 16
-  enemyAttack: 16
+  playerDefense: 12
+  playerAttack: 12
+  enemyDefense: 12
+  enemyAttack: 12
   bpCost: 30
   attackerFX: {fileID: 100004, guid: fb7b0526ade434043b350a180d741cf3, type: 3}
   hitFX: {fileID: 100004, guid: fb7b0526ade434043b350a180d741cf3, type: 3}

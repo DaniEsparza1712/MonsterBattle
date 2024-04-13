@@ -15,7 +15,7 @@ MonoBehaviour:
   attackName: PsychicBeam
   type: 1
   animation: 0
-  baseDamage: 180
+  baseDamage: 200
   baseSpeed: 0
   playerDefense: 0
   playerAttack: 0

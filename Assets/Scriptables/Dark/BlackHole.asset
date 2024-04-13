@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d842a1dee7694c4a9d49a0d920ed4be, type: 3}
   m_Name: BlackHole
   m_EditorClassIdentifier: 
-  attackName: BlackHole
+  attackName: Black Hole
   type: 2
   animation: 0
   baseDamage: 200

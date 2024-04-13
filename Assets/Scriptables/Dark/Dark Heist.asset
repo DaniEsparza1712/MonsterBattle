@@ -15,7 +15,7 @@ MonoBehaviour:
   attackName: Dark Heist
   type: 2
   animation: 1
-  baseDamage: 80
+  baseDamage: 90
   baseSpeed: 0
   playerDefense: 10
   playerAttack: 10
