@@ -85,7 +85,15 @@ public class Manager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            ReceiveAttack(Random.Range(0, 19));
+            var opponentMonster = opponent.activeMonster.GetComponent<Monster>();
+            int[] attacksIndex =
+            {
+                AttacksManager.Instance.Attacks.IndexOf(opponentMonster.attacks[0]),
+                AttacksManager.Instance.Attacks.IndexOf(opponentMonster.attacks[1]),
+                AttacksManager.Instance.Attacks.IndexOf(opponentMonster.attacks[2]),
+                AttacksManager.Instance.Attacks.IndexOf(opponentMonster.attacks[3])
+            };
+            ReceiveAttack(attacksIndex[Random.Range(0, 4)]);
         }
     }
 }

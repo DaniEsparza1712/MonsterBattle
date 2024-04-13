@@ -986,7 +986,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monsterName: Mindgazer
   type: 1
-  defense: 90
+  defense: 80
   attack: 60
   speed: 0
   attacks:

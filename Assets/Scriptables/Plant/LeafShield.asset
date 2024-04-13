@@ -17,7 +17,7 @@ MonoBehaviour:
   animation: 1
   baseDamage: 60
   baseSpeed: 0
-  playerDefense: 11
+  playerDefense: 16
   playerAttack: 0
   enemyDefense: 0
   enemyAttack: 0

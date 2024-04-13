@@ -455,9 +455,9 @@ MonoBehaviour:
   spawnPoint: {fileID: 1254505510}
   activeMonster: {fileID: 0}
   monsters:
-  - {fileID: 3843704267178131297, guid: e9c49f1925b4019419ba29bec8d9264b, type: 3}
-  - {fileID: 6838752322613631778, guid: 60315e10ebe78ef48a314419540ef375, type: 3}
-  - {fileID: 5130156568785483067, guid: 8da847e429b3e314a84c9264ba0d53d0, type: 3}
+  - {fileID: 7351967303721913799, guid: f93ee99791371274bb5fc0c4dfd20d89, type: 3}
+  - {fileID: 4335483586587273440, guid: dec67845266eb1d4e99b4b2a2f7e3d9e, type: 3}
+  - {fileID: 5809034718694644260, guid: d27ce1ef25d8cc54588a65c7c15961ac, type: 3}
   playerState: {fileID: 307317674}
   changeMonsterEvent:
     m_PersistentCalls:
@@ -2728,9 +2728,9 @@ MonoBehaviour:
   spawnPoint: {fileID: 1919737143}
   activeMonster: {fileID: 0}
   monsters:
-  - {fileID: 7351967303721913799, guid: f93ee99791371274bb5fc0c4dfd20d89, type: 3}
-  - {fileID: 5809034718694644260, guid: d27ce1ef25d8cc54588a65c7c15961ac, type: 3}
-  - {fileID: 4335483586587273440, guid: dec67845266eb1d4e99b4b2a2f7e3d9e, type: 3}
+  - {fileID: 3843704267178131297, guid: e9c49f1925b4019419ba29bec8d9264b, type: 3}
+  - {fileID: 6838752322613631778, guid: 60315e10ebe78ef48a314419540ef375, type: 3}
+  - {fileID: 5130156568785483067, guid: 8da847e429b3e314a84c9264ba0d53d0, type: 3}
   playerState: {fileID: 1644466827}
   changeMonsterEvent:
     m_PersistentCalls:

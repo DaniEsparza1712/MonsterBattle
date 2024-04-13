@@ -33,7 +33,14 @@ public class PlayerManager : MonoBehaviour
     {
         if (activeMonster.GetComponent<LifeSystem>().currentLife == 0)
         {
-            ChangeMonster();
+            if(_currentIndex < monsters.Length - 1)
+                ChangeMonster();
+            else
+            {
+                activeMonster.GetComponent<Animator>().SetTrigger("Die");
+                playerState.ChangeState(PlayerState.State.End);
+                opponent.playerState.ChangeState(PlayerState.State.End);
+            }
         }
     }
     

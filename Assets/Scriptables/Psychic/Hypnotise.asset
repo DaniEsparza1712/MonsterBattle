@@ -20,7 +20,7 @@ MonoBehaviour:
   playerDefense: 0
   playerAttack: 0
   enemyDefense: 0
-  enemyAttack: 11
+  enemyAttack: 19
   bpCost: 30
   attackerFX: {fileID: 100002, guid: db50ab1c866680e4bb870bf5eb72dd3d, type: 3}
   hitFX: {fileID: 100002, guid: db50ab1c866680e4bb870bf5eb72dd3d, type: 3}

@@ -12,7 +12,8 @@ public class PlayerState : MonoBehaviour
         AttackingIdle,
         Waiting,
         WaitingHit,
-        GettingHit
+        GettingHit,
+        End
     }
     public State currentState;
     public UnityEvent onChangeToSelecting;
@@ -21,6 +22,7 @@ public class PlayerState : MonoBehaviour
     public UnityEvent onChangeToWaiting;
     public UnityEvent onChangeToWaitingHit;
     public UnityEvent onChangeGettingHit;
+    public UnityEvent onEnd;
     [Header("State Vars")] 
     [SerializeField]
     private float _timer = 0;
@@ -54,6 +56,10 @@ public class PlayerState : MonoBehaviour
             case State.GettingHit:
                 currentState = State.GettingHit;
                 onChangeGettingHit.Invoke();
+                break;
+            case State.End:
+                currentState = State.End;
+                onEnd.Invoke();
                 break;
         }
     }
