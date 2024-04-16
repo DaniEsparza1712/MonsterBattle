@@ -5,7 +5,7 @@ using Random = UnityEngine.Random;
 
 public class Manager : MonoBehaviour
 {
-    public Server serverTest;
+    public Server server;
     public PlayerManager localPlayer;
     public PlayerManager opponent;
     public List<Attack> attacks = new List<Attack>();
@@ -26,31 +26,26 @@ public class Manager : MonoBehaviour
         var index = AttacksManager.Instance.Attacks.IndexOf(attack);
         _localAttack = attack;
         
-        //serverTest.SendToClient();
         onSendInfo.Invoke();
     }
 
-    private void ReceiveAttack(int index)
+    public void ReceiveAttackThread()
     {
-        var attack = AttacksManager.Instance.Attacks[index];
-        _opponentAttack = attack;
-        if (localPlayer.playerState.currentState == PlayerState.State.Waiting)
-        {
-            //Local Player
-            localPlayer.playerState.ChangeState(PlayerState.State.WaitingHit);
-            
-            onReceiveInfo.Invoke();
-            
-            //Opponent
-            opponent.activeMonster.GetComponent<Animator>().SetTrigger(attack.animation.ToString());
-            Instantiate(attack.attackerFX, opponent.activeMonster.transform);
-        }
-        
-        //serverTest.ReceiveFromClient();
+        StartCoroutine(server.ReceiveThread());
+    }
+
+    public void OpponentSendAttackFX()
+    {
+        var attack = AttacksManager.Instance.Attacks[server.receivedValue];
+        var opponentMonster = opponent.activeMonster;
+        opponentMonster.GetComponent<Animator>().SetTrigger(attack.animation.ToString());
+        Instantiate(attack.attackerFX, opponent.transform);
     }
 
     public void ReceiveFX()
     {
+        _opponentAttack = AttacksManager.Instance.Attacks[server.receivedValue];
+        
         var localMonster = localPlayer.activeMonster.GetComponent<Monster>();
         var opponentMonster = opponent.activeMonster.GetComponent<Monster>();
         
@@ -84,21 +79,13 @@ public class Manager : MonoBehaviour
         
         opponent.activeMonster.GetComponent<Animator>().SetTrigger("Hit");
         opponent.activeMonster.GetComponent<LifeSystem>().SubtractLife(damage);
+        
+        //Send to Client
+        StartCoroutine(server.SendThread(AttacksManager.Instance.Attacks.IndexOf(_localAttack)));
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            var opponentMonster = opponent.activeMonster.GetComponent<Monster>();
-            int[] attacksIndex =
-            {
-                AttacksManager.Instance.Attacks.IndexOf(opponentMonster.attacks[0]),
-                AttacksManager.Instance.Attacks.IndexOf(opponentMonster.attacks[1]),
-                AttacksManager.Instance.Attacks.IndexOf(opponentMonster.attacks[2]),
-                AttacksManager.Instance.Attacks.IndexOf(opponentMonster.attacks[3])
-            };
-            ReceiveAttack(attacksIndex[Random.Range(0, 4)]);
-        }
+
     }
 }

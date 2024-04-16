@@ -1,7 +1,13 @@
+using System;
+using System.Collections;
 using System.Runtime.InteropServices;
 using UnityEngine;
 using System.Threading.Tasks;
-using System.Threading;
+using UnityEngine.Events;
+
+/*0-18 = Attacks
+ 90 = Received attack
+ */
 
 public class Server : MonoBehaviour
 {
@@ -22,35 +28,124 @@ public class Server : MonoBehaviour
     public static extern void closeConnection();
     // Start is called before the first frame update
 
-    public void onEnter()
+    public UnityEvent onSendSuccessful;
+    public UnityEvent onReceiveSuccessful;
+    [HideInInspector]
+    public int receivedValue;
+    private int _port;
+
+    public void SetPortPref(int newPort)
     {
-        Task.Run(() => test());
+        PlayerPrefs.SetInt("port", newPort);
+        GetPortPref();
+    }
+
+    private void GetPortPref()
+    {
+        _port = PlayerPrefs.GetInt("port", 8080);
+    }
+
+    public IEnumerator SendThread(int attackIndex)
+    {
+        var task = Task.Run(() => SendToClient(attackIndex));
+        
+        while (!task.IsCompleted)
+        {
+            Debug.Log($"Thread: {task.Status}");
+            yield return new WaitForSeconds(2.0f);
+        }
+        Debug.Log($"Thread: {task.Status}");
+        onSendSuccessful.Invoke();
+    }
+
+    public IEnumerator SendMessageToServer(string msg)
+    {
+        var task = Task.Run(() => SendToClientUDP(msg));
+
+        while (!task.IsCompleted)
+        {
+            yield return new WaitForSeconds(2.0f);
+        }
+        onSendSuccessful.Invoke();
+    }
+
+    public IEnumerator ExpectMessageFromServer(int expected)
+    {
+        var task = Task.Run(() => ReceiveFromClientUDP());
+
+        while (!task.IsCompleted)
+        {
+            Debug.Log($"Thread: {task.Status}");
+            yield return new WaitForSeconds(2.0f);
+        }
+        Debug.Log($"Thread: {task.Status}");
+        if(receivedValue == expected)
+            onReceiveSuccessful.Invoke();
+    }
+
+    public IEnumerator ReceiveThread()
+    {
+        var task = Task.Run(() => ReceiveFromClient());
+        //var stateManager = gameObject.GetComponent<>();
+
+        while (!task.IsCompleted)
+        {
+            Debug.Log($"Thread: {task.Status}");
+            yield return new WaitForSeconds(2.0f);
+        }
+        Debug.Log($"Thread: {task.Status}");   
+        onReceiveSuccessful.Invoke();
     }
     
-    public void test()
+    private void SendToClient(int attackIndex)
     {
-        setupServer("127.0.0.1", "8080");
-        SendToClient();
-        receiveMessageFromClient();
+        setupServer("127.0.0.1", _port.ToString());
+        
+        // Call the sendMessageToClient function
+        sendMessageToClient(attackIndex.ToString());
+        var clientConfirmation = receiveMessageFromClient();
+        Debug.Log($"Received: {clientConfirmation}");
         closeConnection();
     }
 
-    public void SendToClient()
+    private void SendToClientUDP(string msg)
     {
+        setupServer("127.0.0.1", _port.ToString());
+        
         // Call the sendMessageToClient function
-        sendMessageToClient("Hello from C#!");
+        sendMessageToClient(msg);
+        closeConnection();
     }
 
-    public void ReceiveFromClient()
+    private void ReceiveFromClient()
     {
+        setupServer("127.0.0.1", _port.ToString());
+        
         // Call the receiveMessageFromClient function
-        int receivedValue = receiveMessageFromClient();
+        receivedValue = receiveMessageFromClient();
         Debug.Log("Received value: " + receivedValue);
+        sendMessageToClient("90");
+        closeConnection();
+    }
+
+    private void ReceiveFromClientUDP()
+    {
+        setupServer("127.0.0.1", _port.ToString());
+        
+        // Call the receiveMessageFromClient function
+        receivedValue = receiveMessageFromClient();
+        Debug.Log("Received value: " + receivedValue);
+        closeConnection();
+    }
+
+    private void Start()
+    {
+        GetPortPref();
     }
 
     public void Close()
     {
-        // Call the closeConnection function
         closeConnection();
+        Debug.Log("Closed");
     }
 }

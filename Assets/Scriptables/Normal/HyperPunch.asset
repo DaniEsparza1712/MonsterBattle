@@ -15,7 +15,7 @@ MonoBehaviour:
   attackName: Hyper Punch
   type: 0
   animation: 0
-  baseDamage: 220
+  baseDamage: 9999
   baseSpeed: 0
   playerDefense: 0
   playerAttack: 0
