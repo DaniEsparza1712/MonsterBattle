@@ -31,6 +31,13 @@ public class PlayerState : MonoBehaviour
     private float _timer = 0;
     public float attackingTime;
 
+    private void Start()
+    {
+        var playerType = GameObject.Find("TypeManager").GetComponent<PlayerTypeManager>().GetPlayerType;
+        if(playerType != 0)
+            ChangeState(State.Waiting);
+    }
+
     public void ChangeState(State state)
     {
         _timer = 0;

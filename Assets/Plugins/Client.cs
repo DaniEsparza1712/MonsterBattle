@@ -9,22 +9,22 @@ using UnityEngine.Events;
  90 = Received attack
  */
 
-public class Server : MonoBehaviour
+public class Client : MonoBehaviour
 {
     // Import the setupServer function
-    [DllImport("server.dll")] // Change "yourLibraryName" to the name of your C library
-    public static extern void setupServer(string ipAddress, string port);
+    [DllImport("client.dll")] // Change "yourLibraryName" to the name of your C library
+    public static extern void setupClient(string ipAddress, string port);
 
     // Import the sendMessageToClient function
-    [DllImport("server.dll")] // Change "yourLibraryName" to the name of your C library
-    public static extern void sendMessageToClient(string msg);
+    [DllImport("client.dll")] // Change "yourLibraryName" to the name of your C library
+    public static extern void sendMessageToServer(string msg);
 
     // Import the receiveMessageFromClient function
-    [DllImport("server.dll")] // Change "yourLibraryName" to the name of your C library
-    public static extern int receiveMessageFromClient();
+    [DllImport("client.dll")] // Change "yourLibraryName" to the name of your C library
+    public static extern int recieveMessageFromServer();
 
     // Import the closeConnection function
-    [DllImport("server.dll")] // Change "yourLibraryName" to the name of your C library
+    [DllImport("client.dll")] // Change "yourLibraryName" to the name of your C library
     public static extern void closeConnection();
     // Start is called before the first frame update
 
@@ -39,7 +39,7 @@ public class Server : MonoBehaviour
         
         while (!task.IsCompleted)
         {
-            Debug.Log($"Thread: {task.Status}");
+            Debug.Log($"Send Thread: {task.Status}");
             yield return new WaitForSeconds(2.0f);
         }
         Debug.Log($"Thread: {task.Status}");
@@ -52,6 +52,7 @@ public class Server : MonoBehaviour
 
         while (!task.IsCompleted)
         {
+            Debug.Log($"Thread: {task.Status}");
             yield return new WaitForSeconds(2.0f);
         }
         onSendSuccessful.Invoke();
@@ -87,45 +88,45 @@ public class Server : MonoBehaviour
     
     private void SendToClient(int attackIndex)
     {
-        setupServer("127.0.0.1", "8080");
+        setupClient("127.0.0.1", "8080");
         
         // Call the sendMessageToClient function
-        sendMessageToClient(attackIndex.ToString());
-        var clientConfirmation = receiveMessageFromClient();
+        sendMessageToServer(attackIndex.ToString());
+        var clientConfirmation = recieveMessageFromServer();
         Debug.Log($"Received: {clientConfirmation}");
         closeConnection();
     }
 
     private void SendToClientUDP(string msg)
     {
-        setupServer("127.0.0.1", "8080");
+        setupClient("127.0.0.1", "8080");
         
         // Call the sendMessageToClient function
-        sendMessageToClient(msg);
+        sendMessageToServer(msg);
         closeConnection();
     }
 
     private void ReceiveFromClient()
     {
-        setupServer("127.0.0.1", "8080");
+        setupClient("127.0.0.1", "8080");
         
         // Call the receiveMessageFromClient function
-        receivedValue = receiveMessageFromClient();
+        receivedValue = recieveMessageFromServer();
         Debug.Log("Received value: " + receivedValue);
-        sendMessageToClient("90");
+        sendMessageToServer("90");
         closeConnection();
     }
 
     private void ReceiveFromClientUDP()
     {
-        setupServer("127.0.0.1", "8080");
+        setupClient("127.0.0.1", "8080");
         
         // Call the receiveMessageFromClient function
-        receivedValue = receiveMessageFromClient();
+        receivedValue = recieveMessageFromServer();
         Debug.Log("Received value: " + receivedValue);
         closeConnection();
     }
-
+    
     public void Close()
     {
         closeConnection();

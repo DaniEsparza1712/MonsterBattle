@@ -15,10 +15,12 @@ public class Manager : MonoBehaviour
 
     private Attack _localAttack;
     private Attack _opponentAttack;
+    public int playerType;
 
     private void Awake()
     {
         AttacksManager.Instance = new AttacksManager(attacks);
+        playerType = GameObject.Find("TypeManager").GetComponent<PlayerTypeManager>().GetPlayerType;
     }
 
     public void SendAttack(Attack attack)
@@ -31,12 +33,20 @@ public class Manager : MonoBehaviour
 
     public void ReceiveAttackThread()
     {
+<<<<<<< Updated upstream
         StartCoroutine(server.ReceiveThread());
+=======
+        StartCoroutine(playerType == 0 ? server.ReceiveThread() : client.ReceiveThread());
+>>>>>>> Stashed changes
     }
 
     public void OpponentSendAttackFX()
     {
+<<<<<<< Updated upstream
         var attack = AttacksManager.Instance.Attacks[server.receivedValue];
+=======
+        var attack = AttacksManager.Instance.Attacks[playerType == 0 ? server.receivedValue : client.receivedValue];
+>>>>>>> Stashed changes
         var opponentMonster = opponent.activeMonster;
         opponentMonster.GetComponent<Animator>().SetTrigger(attack.animation.ToString());
         Instantiate(attack.attackerFX, opponent.transform);
@@ -44,7 +54,11 @@ public class Manager : MonoBehaviour
 
     public void ReceiveFX()
     {
+<<<<<<< Updated upstream
         _opponentAttack = AttacksManager.Instance.Attacks[server.receivedValue];
+=======
+        _opponentAttack = AttacksManager.Instance.Attacks[playerType == 0 ? server.receivedValue : client.receivedValue];
+>>>>>>> Stashed changes
         
         var localMonster = localPlayer.activeMonster.GetComponent<Monster>();
         var opponentMonster = opponent.activeMonster.GetComponent<Monster>();
@@ -67,7 +81,11 @@ public class Manager : MonoBehaviour
     {
         var localMonster = localPlayer.activeMonster.GetComponent<Monster>();
         var opponentMonster = opponent.activeMonster.GetComponent<Monster>();
+<<<<<<< Updated upstream
         
+=======
+
+>>>>>>> Stashed changes
         localMonster.AddAttack(_localAttack.playerAttack);
         localMonster.AddDefense(_localAttack.playerDefense);
         
@@ -82,10 +100,5 @@ public class Manager : MonoBehaviour
         
         //Send to Client
         StartCoroutine(server.SendThread(AttacksManager.Instance.Attacks.IndexOf(_localAttack)));
-    }
-
-    private void Update()
-    {
-
     }
 }

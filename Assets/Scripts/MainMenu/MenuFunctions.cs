@@ -26,13 +26,16 @@ public class MenuFunctions : MonoBehaviour
 
     public void SendJoinCode()
     {
+<<<<<<< Updated upstream
         server.SetPortPref(8081);
         StartCoroutine(server.SendMessageToServer(GetJoinCode));
+=======
+        StartCoroutine(client.SendMessageToServer(GetJoinCode));
+>>>>>>> Stashed changes
     }
 
     public void ListenForJoinCode()
     {
-        server.SetPortPref(8080);
         StartCoroutine(server.ExpectMessageFromServer(int.Parse(GetJoinCode)));
     }
 }

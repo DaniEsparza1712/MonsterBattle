@@ -10,13 +10,13 @@ public class PlayerManager : MonoBehaviour
     public GameObject activeMonster;
     private int _currentIndex;
     [Header("Info")] 
-    public GameObject[] monsters = new GameObject[3];
+    public List<GameObject> monsters = new List<GameObject>();
     public PlayerState playerState;
     public UnityEvent changeMonsterEvent;
     [Header("Opponent")] 
     public PlayerManager opponent;
     
-    void Awake()
+    public void InitializeMonster()
     {
         _currentIndex = 0;
         activeMonster = Instantiate(monsters[_currentIndex], spawnPoint);
@@ -24,16 +24,18 @@ public class PlayerManager : MonoBehaviour
 
     public void SetMonsters(GameObject[] monstersToSet)
     {
-        monsters[0] = monstersToSet[0];
-        monsters[1] = monstersToSet[1];
-        monsters[2] = monstersToSet[2];
+        monsters.Clear();
+        foreach (var monster in monstersToSet)
+        {
+            monsters.Add(monster);
+        }
     }
 
     public void ManageMonsterDeath()
     {
         if (activeMonster.GetComponent<LifeSystem>().currentLife == 0)
         {
-            if(_currentIndex < monsters.Length - 1)
+            if(_currentIndex < monsters.Count - 1)
                 ChangeMonster();
             else
             {

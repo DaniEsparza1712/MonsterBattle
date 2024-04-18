@@ -1727,6 +1727,11 @@ GameObject:
   - component: {fileID: 853650193}
   - component: {fileID: 853650194}
   - component: {fileID: 853650195}
+<<<<<<< Updated upstream
+=======
+  - component: {fileID: 853650196}
+  - component: {fileID: 853650197}
+>>>>>>> Stashed changes
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -1845,6 +1850,87 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   receivedValue: 0
+<<<<<<< Updated upstream
+=======
+--- !u!114 &853650196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 853650191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59f98b5972838f748ab763efe221c34a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onSendSuccessful:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 307317674}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: OpponentRegisteredAttack
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onReceiveSuccessful:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 307317674}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: LocalRegisteredAttack
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 853650194}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: OpponentSendAttackFX
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  receivedValue: 0
+--- !u!114 &853650197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 853650191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5318056bfb8a3c14fa65ec91cd9d8c92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _player: 0
+  player1: {fileID: 307317671}
+  player1Monsters:
+  - {fileID: 3843704267178131297, guid: e9c49f1925b4019419ba29bec8d9264b, type: 3}
+  - {fileID: 6838752322613631778, guid: 60315e10ebe78ef48a314419540ef375, type: 3}
+  - {fileID: 5130156568785483067, guid: 8da847e429b3e314a84c9264ba0d53d0, type: 3}
+  player2: {fileID: 1644466825}
+  player2Monsters:
+  - {fileID: 4335483586587273440, guid: dec67845266eb1d4e99b4b2a2f7e3d9e, type: 3}
+  - {fileID: 7351967303721913799, guid: f93ee99791371274bb5fc0c4dfd20d89, type: 3}
+  - {fileID: 5809034718694644260, guid: d27ce1ef25d8cc54588a65c7c15961ac, type: 3}
+>>>>>>> Stashed changes
 --- !u!1 &878446287
 GameObject:
   m_ObjectHideFlags: 0
