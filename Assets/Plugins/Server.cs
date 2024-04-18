@@ -34,17 +34,6 @@ public class Server : MonoBehaviour
     public int receivedValue;
     private int _port;
 
-    public void SetPortPref(int newPort)
-    {
-        PlayerPrefs.SetInt("port", newPort);
-        GetPortPref();
-    }
-
-    private void GetPortPref()
-    {
-        _port = PlayerPrefs.GetInt("port", 8080);
-    }
-
     public IEnumerator SendThread(int attackIndex)
     {
         var task = Task.Run(() => SendToClient(attackIndex));
@@ -99,7 +88,7 @@ public class Server : MonoBehaviour
     
     private void SendToClient(int attackIndex)
     {
-        setupServer("127.0.0.1", _port.ToString());
+        setupServer("127.0.0.1", "8080");
         
         // Call the sendMessageToClient function
         sendMessageToClient(attackIndex.ToString());
@@ -110,7 +99,7 @@ public class Server : MonoBehaviour
 
     private void SendToClientUDP(string msg)
     {
-        setupServer("127.0.0.1", _port.ToString());
+        setupServer("127.0.0.1", "8080");
         
         // Call the sendMessageToClient function
         sendMessageToClient(msg);
@@ -119,7 +108,7 @@ public class Server : MonoBehaviour
 
     private void ReceiveFromClient()
     {
-        setupServer("127.0.0.1", _port.ToString());
+        setupServer("127.0.0.1", "8080");
         
         // Call the receiveMessageFromClient function
         receivedValue = receiveMessageFromClient();
@@ -130,17 +119,12 @@ public class Server : MonoBehaviour
 
     private void ReceiveFromClientUDP()
     {
-        setupServer("127.0.0.1", _port.ToString());
+        setupServer("127.0.0.1", "8080");
         
         // Call the receiveMessageFromClient function
         receivedValue = receiveMessageFromClient();
         Debug.Log("Received value: " + receivedValue);
         closeConnection();
-    }
-
-    private void Start()
-    {
-        GetPortPref();
     }
 
     public void Close()

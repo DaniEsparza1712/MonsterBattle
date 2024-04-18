@@ -27,24 +27,11 @@ public class MenuFunctions : MonoBehaviour
 
     public void SendJoinCode()
     {
-        Debug.Log("d");
-        client.SetPortPref(8080);
         StartCoroutine(client.SendMessageToServer(GetJoinCode));
     }
 
     public void ListenForJoinCode()
     {
-        server.SetPortPref(8080);
         StartCoroutine(server.ExpectMessageFromServer(int.Parse(GetJoinCode)));
-    }
-
-    public void setServerPlayerType()
-    {
-        PlayerPrefs.SetInt("Type", 0);
-    }
-
-    public void setClientPlayerType()
-    {
-        PlayerPrefs.SetInt("Type", 1);
     }
 }

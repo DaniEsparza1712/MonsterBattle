@@ -33,18 +33,7 @@ public class Client : MonoBehaviour
     [HideInInspector]
     public int receivedValue;
     private int _port;
-
-    public void SetPortPref(int newPort)
-    {
-        PlayerPrefs.SetInt("port", newPort);
-        GetPortPref();
-    }
-
-    private void GetPortPref()
-    {
-        _port = PlayerPrefs.GetInt("port", 8080);
-    }
-
+    
     public IEnumerator SendThread(int attackIndex)
     {
         var task = Task.Run(() => SendToClient(attackIndex));
@@ -99,7 +88,7 @@ public class Client : MonoBehaviour
     
     private void SendToClient(int attackIndex)
     {
-        setupClient("127.0.0.1", _port.ToString());
+        setupClient("127.0.0.1", "8080");
         
         // Call the sendMessageToClient function
         sendMessageToServer(attackIndex.ToString());
@@ -111,7 +100,7 @@ public class Client : MonoBehaviour
     private void SendToClientUDP(string msg)
     {
         Debug.Log(_port);
-        setupClient("127.0.0.1", _port.ToString());
+        setupClient("127.0.0.1", "8080");
         
         // Call the sendMessageToClient function
         sendMessageToServer(msg);
@@ -120,7 +109,7 @@ public class Client : MonoBehaviour
 
     private void ReceiveFromClient()
     {
-        setupClient("127.0.0.1", _port.ToString());
+        setupClient("127.0.0.1", "8080");
         
         // Call the receiveMessageFromClient function
         receivedValue = recieveMessageFromServer();
@@ -131,17 +120,12 @@ public class Client : MonoBehaviour
 
     private void ReceiveFromClientUDP()
     {
-        setupClient("127.0.0.1", _port.ToString());
+        setupClient("127.0.0.1", "8080");
         
         // Call the receiveMessageFromClient function
         receivedValue = recieveMessageFromServer();
         Debug.Log("Received value: " + receivedValue);
         closeConnection();
-    }
-
-    private void Start()
-    {
-        GetPortPref();
     }
 
     public void Close()

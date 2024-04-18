@@ -16,10 +16,12 @@ public class Manager : MonoBehaviour
 
     private Attack _localAttack;
     private Attack _opponentAttack;
-
+    private int playerType;
+    
     private void Awake()
     {
         AttacksManager.Instance = new AttacksManager(attacks);
+        playerType = GameObject.Find("PlayerTypeManager").GetComponent<PlayerTypeManager>().GetPlayerType;
     }
 
     public void SendAttack(Attack attack)
@@ -32,13 +34,11 @@ public class Manager : MonoBehaviour
 
     public void ReceiveAttackThread()
     {
-        int playerType = PlayerPrefs.GetInt("Type", 1);
         StartCoroutine(playerType == 0 ? server.ReceiveThread() : client.ReceiveThread());
     }
 
     public void OpponentSendAttackFX()
     {
-        int playerType = PlayerPrefs.GetInt("Type", 1);
         var attack = AttacksManager.Instance.Attacks[playerType == 0 ? server.receivedValue : client.receivedValue];
         var opponentMonster = opponent.activeMonster;
         opponentMonster.GetComponent<Animator>().SetTrigger(attack.animation.ToString());
@@ -47,7 +47,6 @@ public class Manager : MonoBehaviour
 
     public void ReceiveFX()
     {
-        int playerType = PlayerPrefs.GetInt("Type", 1);
         _opponentAttack = AttacksManager.Instance.Attacks[playerType == 0 ? server.receivedValue : client.receivedValue];
         
         var localMonster = localPlayer.activeMonster.GetComponent<Monster>();
@@ -71,7 +70,6 @@ public class Manager : MonoBehaviour
     {
         var localMonster = localPlayer.activeMonster.GetComponent<Monster>();
         var opponentMonster = opponent.activeMonster.GetComponent<Monster>();
-        int playerType = PlayerPrefs.GetInt("Type", 1);
 
         localMonster.AddAttack(_localAttack.playerAttack);
         localMonster.AddDefense(_localAttack.playerDefense);
@@ -94,10 +92,5 @@ public class Manager : MonoBehaviour
         {
             StartCoroutine(client.SendThread(AttacksManager.Instance.Attacks.IndexOf(_localAttack)));
         }
-    }
-
-    private void Update()
-    {
-
     }
 }

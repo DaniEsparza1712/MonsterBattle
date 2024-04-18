@@ -13,18 +13,12 @@ public class PlayerUIManager : MonoBehaviour
     public GameObject attackButtonPrefab;
     private Monster _monster;
     // Start is called before the first frame update
-    private void Start()
+    public void InitializeUI()
     {
         _playerManager = GetComponent<PlayerManager>();
         GetMonsterInfo();
         if(attackButtonContainer)
             FillOutAttacks();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void GetMonsterInfo()
