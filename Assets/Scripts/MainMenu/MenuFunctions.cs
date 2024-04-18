@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
+//95 is for start battle on server
 public class MenuFunctions : MonoBehaviour
 {
     private string _joinCode;
@@ -33,5 +34,15 @@ public class MenuFunctions : MonoBehaviour
     public void ListenForJoinCode()
     {
         StartCoroutine(server.ExpectMessageFromServer(int.Parse(GetJoinCode)));
+    }
+
+    public void SendBattle()
+    {
+        StartCoroutine(server.SendThread(95));
+    }
+    
+    public void ListenForBattle()
+    {
+        StartCoroutine(client.ReceiveThread());
     }
 }
