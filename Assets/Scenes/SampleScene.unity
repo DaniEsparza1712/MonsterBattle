@@ -331,8 +331,101 @@ MonoBehaviour:
       m_Calls: []
   onChangeGettingHit:
     m_PersistentCalls:
+<<<<<<< Updated upstream:Assets/Scenes/SampleScene.unity
       m_Calls: []
   attackingTime: 2
+=======
+      m_Calls:
+      - m_Target: {fileID: 853650194}
+        m_TargetAssemblyTypeName: Manager, Assembly-CSharp
+        m_MethodName: ReceiveFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onEnd:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 747402854}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 680050070}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 814396403}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 703632351}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 853650195}
+        m_TargetAssemblyTypeName: Server, Assembly-CSharp-firstpass
+        m_MethodName: Close
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 853650198}
+        m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
+        m_MethodName: LoadLevel
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Connection
+          m_BoolArgument: 0
+        m_CallState: 2
+  _timer: 0
+  attackingTime: 1.5
+>>>>>>> Stashed changes:Assets/Scenes/Battle.unity
 --- !u!1 &381200660
 GameObject:
   m_ObjectHideFlags: 0
@@ -390,6 +483,85 @@ MonoBehaviour:
   onFilledEvent:
     m_PersistentCalls:
       m_Calls: []
+<<<<<<< Updated upstream:Assets/Scenes/SampleScene.unity
+=======
+--- !u!1 &680050070
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 680050071}
+  - component: {fileID: 680050073}
+  - component: {fileID: 680050072}
+  m_Layer: 5
+  m_Name: Waiting
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &680050071
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 680050070}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 279817865}
+  m_Father: {fileID: 1768436470}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: 0, y: 50}
+  m_SizeDelta: {x: 0, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &680050072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 680050070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.18431373, g: 0.18431373, b: 0.18431373, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &680050073
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 680050070}
+  m_CullTransparentMesh: 1
+>>>>>>> Stashed changes:Assets/Scenes/Battle.unity
 --- !u!1 &691087432
 GameObject:
   m_ObjectHideFlags: 0
@@ -763,7 +935,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.58909845, g: 0.6197064, b: 0.66666657, a: 1}
+  m_Color: {r: 0.18431373, g: 0.18431373, b: 0.18431373, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1204,6 +1376,243 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 814396403}
   m_CullTransparentMesh: 1
+<<<<<<< Updated upstream:Assets/Scenes/SampleScene.unity
+=======
+--- !u!1 &817498723 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7177991128484655659, guid: 59a35ab9f68edff40b6e5332bed330f5, type: 3}
+  m_PrefabInstance: {fileID: 1148565408}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &817498727 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7177991128484655636, guid: 59a35ab9f68edff40b6e5332bed330f5, type: 3}
+  m_PrefabInstance: {fileID: 1148565408}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &853650191
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 853650193}
+  - component: {fileID: 853650194}
+  - component: {fileID: 853650195}
+  - component: {fileID: 853650196}
+  - component: {fileID: 853650197}
+  - component: {fileID: 853650198}
+  m_Layer: 0
+  m_Name: Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &853650193
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 853650191}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &853650194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 853650191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf2991db9ba68b0459bd43cc5b5b2963, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  server: {fileID: 853650195}
+  client: {fileID: 853650196}
+  localPlayer: {fileID: 307317671}
+  opponent: {fileID: 1644466825}
+  attacks:
+  - {fileID: 11400000, guid: 9ba6024535de0e3419c18d3acf6ec030, type: 2}
+  - {fileID: 11400000, guid: 70fdd3aa00047ba4084de82baf3b08ff, type: 2}
+  - {fileID: 11400000, guid: 5b6337936de5da948b38d90f0e53f86e, type: 2}
+  - {fileID: 11400000, guid: 5c288d69724a51541b5e2ffdad44d425, type: 2}
+  - {fileID: 11400000, guid: 13a258e9ac312b143a1e207f07329459, type: 2}
+  - {fileID: 11400000, guid: fcd57f3fb40540b4ebf0d8838733c62d, type: 2}
+  - {fileID: 11400000, guid: 509b54e69c9d59740b79e529cf6e565c, type: 2}
+  - {fileID: 11400000, guid: 0ef03ea07edd6ba4b9cb0d9d1f8a12bc, type: 2}
+  - {fileID: 11400000, guid: 1c6c337f9ff48344b879325ce8c76fde, type: 2}
+  - {fileID: 11400000, guid: a166a1622d7aaa74185d1be7ea0bb7f6, type: 2}
+  - {fileID: 11400000, guid: 4ca381a1b592da44a98ef3167ab2cfed, type: 2}
+  - {fileID: 11400000, guid: 4715a694d7f40c34c9479670bd7cc338, type: 2}
+  - {fileID: 11400000, guid: 4173fdecd9055124eb358e6a21fb5fa2, type: 2}
+  - {fileID: 11400000, guid: 592906d65b843e2489036cef5d9b1957, type: 2}
+  - {fileID: 11400000, guid: 1c2d936d480e53143bd3dde953285516, type: 2}
+  - {fileID: 11400000, guid: d5dfb4b483a7c6846b9add6fff63d3d9, type: 2}
+  - {fileID: 11400000, guid: c7a5ca92cbab1d84cb48ff203d6bfce1, type: 2}
+  - {fileID: 11400000, guid: 723b59ecfdd42f9409b7e14b4a578c47, type: 2}
+  - {fileID: 11400000, guid: d2b76ea7692c6b94d93002d288713e93, type: 2}
+  onSendInfo:
+    m_PersistentCalls:
+      m_Calls: []
+  onReceiveInfo:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &853650195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 853650191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ed71c1142f52e1419b63c68b0aa0aaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onSendSuccessful:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 307317674}
+        m_TargetAssemblyTypeName: PlayerState, Assembly-CSharp
+        m_MethodName: OpponentRegisteredAttack
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onReceiveSuccessful:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 307317674}
+        m_TargetAssemblyTypeName: PlayerState, Assembly-CSharp
+        m_MethodName: LocalRegisteredAttack
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 853650194}
+        m_TargetAssemblyTypeName: Manager, Assembly-CSharp
+        m_MethodName: OpponentSendAttackFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  receivedValue: 0
+--- !u!114 &853650196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 853650191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59f98b5972838f748ab763efe221c34a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onSendSuccessful:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 307317674}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: OpponentRegisteredAttack
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onReceiveSuccessful:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 307317674}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: LocalRegisteredAttack
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 853650194}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: OpponentSendAttackFX
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  receivedValue: 0
+--- !u!114 &853650197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 853650191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8c016a3231ea144cbf0076ad8db7082, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player1Manager: {fileID: 307317671}
+  player1UIManager: {fileID: 307317673}
+  player1Monsters:
+  - {fileID: 3843704267178131297, guid: e9c49f1925b4019419ba29bec8d9264b, type: 3}
+  - {fileID: 6838752322613631778, guid: 60315e10ebe78ef48a314419540ef375, type: 3}
+  - {fileID: 5130156568785483067, guid: 8da847e429b3e314a84c9264ba0d53d0, type: 3}
+  player2Manager: {fileID: 1644466825}
+  player2UIManager: {fileID: 1644466828}
+  player2Monsters:
+  - {fileID: 7351967303721913799, guid: f93ee99791371274bb5fc0c4dfd20d89, type: 3}
+  - {fileID: 4335483586587273440, guid: dec67845266eb1d4e99b4b2a2f7e3d9e, type: 3}
+  - {fileID: 5809034718694644260, guid: d27ce1ef25d8cc54588a65c7c15961ac, type: 3}
+--- !u!114 &853650198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 853650191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d128f6236d094d438954869be764b6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+>>>>>>> Stashed changes:Assets/Scenes/Battle.unity
 --- !u!1 &878446287
 GameObject:
   m_ObjectHideFlags: 0
@@ -2168,6 +2577,85 @@ MonoBehaviour:
   onChangeGettingHit:
     m_PersistentCalls:
       m_Calls: []
+<<<<<<< Updated upstream:Assets/Scenes/SampleScene.unity
+=======
+  onEnd:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 747402854}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 680050070}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 814396403}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 703632351}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 853650195}
+        m_TargetAssemblyTypeName: Server, Assembly-CSharp-firstpass
+        m_MethodName: Close
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 853650198}
+        m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
+        m_MethodName: LoadLevel
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Connection
+          m_BoolArgument: 0
+        m_CallState: 2
+  _timer: 0
+>>>>>>> Stashed changes:Assets/Scenes/Battle.unity
   attackingTime: 0
 --- !u!114 &1644466828
 MonoBehaviour:

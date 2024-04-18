@@ -15,7 +15,11 @@ MonoBehaviour:
   attackName: Hyper Punch
   type: 0
   animation: 0
+<<<<<<< Updated upstream
   baseDamage: 25
+=======
+  baseDamage: 9999
+>>>>>>> Stashed changes
   baseSpeed: 0
   playerDefense: 0
   playerAttack: 0
