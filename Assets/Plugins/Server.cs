@@ -27,6 +27,22 @@ public class Server : MonoBehaviour
     [DllImport("server.dll")] // Change "yourLibraryName" to the name of your C library
     public static extern void closeConnection();
     // Start is called before the first frame update
+    
+    
+    
+    // Import the setupServer function
+    [DllImport("server.dll")] // Change "yourLibraryName" to the name of your C library
+    public static extern void setupServerUDP(string ipAddress, string port);
+
+    // Import the receiveMessageFromClient function
+    [DllImport("server.dll")] // Change "yourLibraryName" to the name of your C library
+    public static extern int receiveMessageFromClientUDP();
+
+    // Import the closeConnection function
+    [DllImport("server.dll")] // Change "yourLibraryName" to the name of your C library
+    public static extern void closeConnectionUDP();
+    // Start is called before the first frame update
+
 
     public UnityEvent onSendSuccessful;
     public UnityEvent onReceiveSuccessful;
@@ -106,11 +122,11 @@ public class Server : MonoBehaviour
 
     private void ReceiveFromClient()
     {
-        setupServer("127.0.0.1", "8080");
+        setupServerUDP("127.0.0.1", "8080");
         
         // Call the receiveMessageFromClient function
-        receivedValue = receiveMessageFromClient();
-        closeConnection();
+        receivedValue = receiveMessageFromClientUDP();
+        closeConnectionUDP();
     }
 
     private void ReceiveFromClientUDP()

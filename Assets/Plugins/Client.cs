@@ -27,6 +27,27 @@ public class Client : MonoBehaviour
     [DllImport("client.dll")] // Change "yourLibraryName" to the name of your C library
     public static extern void closeConnection();
     // Start is called before the first frame update
+    
+    
+    
+    
+    // Import the setupServer function
+    [DllImport("client.dll")] // Change "yourLibraryName" to the name of your C library
+    public static extern void setupClientUDP(string ipAddress, string port);
+
+    // Import the sendMessageToClient function
+    [DllImport("client.dll")] // Change "yourLibraryName" to the name of your C library
+    public static extern void sendMessageToServerUDP(string msg);
+
+    // Import the receiveMessageFromClient function
+    [DllImport("client.dll")] // Change "yourLibraryName" to the name of your C library
+    public static extern int receiveMessageFromServerUDP();
+
+    // Import the closeConnection function
+    [DllImport("client.dll")] // Change "yourLibraryName" to the name of your C library
+    public static extern void closeConnectionUDP();
+    // Start is called before the first frame update
+
 
     public UnityEvent onSendSuccessful;
     public UnityEvent onReceiveSuccessful;
@@ -99,11 +120,11 @@ public class Client : MonoBehaviour
 
     private void SendToClientUDP(string msg)
     {
-        setupClient("127.0.0.1", "8080");
+        setupClientUDP("127.0.0.1", "8080");
         
         // Call the sendMessageToClient function
-        sendMessageToServer(msg);
-        closeConnection();
+        sendMessageToServerUDP(msg);
+        closeConnectionUDP();
     }
 
     private void ReceiveFromClient()
@@ -117,11 +138,11 @@ public class Client : MonoBehaviour
 
     private void ReceiveFromClientUDP()
     {
-        setupClient("127.0.0.1", "8080");
+        setupClientUDP("127.0.0.1", "8080");
         
         // Call the receiveMessageFromClient function
         receivedValue = receiveMessageFromServer();
         Debug.Log("Received value: " + receivedValue);
-        closeConnection();
+        closeConnectionUDP();
     }
 }
