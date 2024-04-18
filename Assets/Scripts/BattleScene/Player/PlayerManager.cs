@@ -53,4 +53,11 @@ public class PlayerManager : MonoBehaviour
         activeMonster = Instantiate(monsters[_currentIndex], spawnPoint);
         changeMonsterEvent.Invoke();
     }
+
+    public bool CanContinue()
+    {
+        if (_currentIndex >= 2 && activeMonster.GetComponent<LifeSystem>().currentLife == 0)
+            return false;
+        return true;
+    }
 }

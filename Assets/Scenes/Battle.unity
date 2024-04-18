@@ -559,6 +559,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1644466825}
+        m_TargetAssemblyTypeName: PlayerManager, Assembly-CSharp
+        m_MethodName: ManageMonsterDeath
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 5
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
       - m_Target: {fileID: 307317673}
         m_TargetAssemblyTypeName: PlayerUIManager, Assembly-CSharp
         m_MethodName: SetActiveAttackBox
@@ -745,16 +757,16 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 853650195}
-        m_TargetAssemblyTypeName: Server, Assembly-CSharp-firstpass
-        m_MethodName: Close
-        m_Mode: 1
+      - m_Target: {fileID: 853650198}
+        m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
+        m_MethodName: LoadLevel
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Connection
           m_BoolArgument: 0
         m_CallState: 2
   _timer: 0
@@ -1729,6 +1741,7 @@ GameObject:
   - component: {fileID: 853650195}
   - component: {fileID: 853650196}
   - component: {fileID: 853650197}
+  - component: {fileID: 853650198}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -1927,6 +1940,18 @@ MonoBehaviour:
   - {fileID: 4335483586587273440, guid: dec67845266eb1d4e99b4b2a2f7e3d9e, type: 3}
   - {fileID: 7351967303721913799, guid: f93ee99791371274bb5fc0c4dfd20d89, type: 3}
   - {fileID: 5809034718694644260, guid: d27ce1ef25d8cc54588a65c7c15961ac, type: 3}
+--- !u!114 &853650198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 853650191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d128f6236d094d438954869be764b6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &878446287
 GameObject:
   m_ObjectHideFlags: 0
@@ -3072,16 +3097,16 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 853650195}
-        m_TargetAssemblyTypeName: Server, Assembly-CSharp-firstpass
-        m_MethodName: Close
-        m_Mode: 1
+      - m_Target: {fileID: 853650198}
+        m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
+        m_MethodName: LoadLevel
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Connection
           m_BoolArgument: 0
         m_CallState: 2
   _timer: 0

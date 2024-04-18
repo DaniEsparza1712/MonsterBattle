@@ -9,4 +9,15 @@ public class LevelManager : MonoBehaviour
     {
         SceneManager.LoadScene(level);
     }
+
+    public void LoadLevelDelayed(string level)
+    {
+        StartCoroutine(LoadEnumerator(level));
+    }
+
+    public IEnumerator LoadEnumerator(string level)
+    {
+        yield return new WaitForSeconds(3.0f);
+        SceneManager.LoadScene(level);
+    }
 }
