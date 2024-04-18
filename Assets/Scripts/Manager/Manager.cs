@@ -44,7 +44,7 @@ public class Manager : MonoBehaviour
         var attack = AttacksManager.Instance.Attacks[playerType == 0 ? server.receivedValue : client.receivedValue];
         var opponentMonster = opponent.activeMonster;
         opponentMonster.GetComponent<Animator>().SetTrigger(attack.animation.ToString());
-        Instantiate(attack.attackerFX, opponent.transform);
+        Instantiate(attack.attackerFX, opponent.activeMonster.transform);
     }
 
     public void ReceiveFX()
