@@ -36,7 +36,7 @@ public class Server : MonoBehaviour
 
     // Import the receiveMessageFromClient function
     [DllImport("server.dll")] // Change "yourLibraryName" to the name of your C library
-    public static extern int receiveMessageFromClientUDP();
+    public static extern string receiveMessageFromClientUDP();
 
     // Import the closeConnection function
     [DllImport("server.dll")] // Change "yourLibraryName" to the name of your C library
@@ -122,21 +122,21 @@ public class Server : MonoBehaviour
 
     private void ReceiveFromClient()
     {
-        setupServerUDP("127.0.0.1", "8080");
-        
-        // Call the receiveMessageFromClient function
-        receivedValue = receiveMessageFromClientUDP();
-        closeConnectionUDP();
-    }
-
-    private void ReceiveFromClientUDP()
-    {
         setupServer("127.0.0.1", "8080");
         
         // Call the receiveMessageFromClient function
         receivedValue = receiveMessageFromClient();
-        Debug.Log("Received value: " + receivedValue);
         closeConnection();
+    }
+
+    private void ReceiveFromClientUDP()
+    {
+        setupServerUDP("127.0.0.1", "8080");
+        
+        // Call the receiveMessageFromClient function
+        receivedValue = int.Parse(receiveMessageFromClientUDP());
+        Debug.Log("Received value: " + receivedValue);
+        closeConnectionUDP();
     }
 
     public void Close()
