@@ -326,9 +326,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monsterName: Glidebarb
-  type: 0
-  defense: 0
-  attack: 0
+  type: 3
+  defense: 82
+  attack: 65
   speed: 0
   attacks:
   - {fileID: 11400000, guid: 5b6337936de5da948b38d90f0e53f86e, type: 2}

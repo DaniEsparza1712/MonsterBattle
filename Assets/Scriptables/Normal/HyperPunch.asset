@@ -15,12 +15,12 @@ MonoBehaviour:
   attackName: Hyper Punch
   type: 0
   animation: 0
-  baseDamage: 25
+  baseDamage: 250
   baseSpeed: 0
   playerDefense: 0
   playerAttack: 0
   enemyDefense: 0
   enemyAttack: 0
-  bpCost: 30
+  bpCost: 20
   attackerFX: {fileID: 100004, guid: f95ff734540a0d749be6571b6cb5b37f, type: 3}
-  hitFX: {fileID: 0}
+  hitFX: {fileID: 1892078723244562, guid: 46876a2780737ec45a19d62f88e5ce56, type: 3}

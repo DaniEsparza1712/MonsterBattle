@@ -15,12 +15,12 @@ MonoBehaviour:
   attackName: Hypnotise
   type: 1
   animation: 0
-  baseDamage: 10
+  baseDamage: 110
   baseSpeed: 0
   playerDefense: 0
   playerAttack: 0
   enemyDefense: 0
-  enemyAttack: -1
-  bpCost: 10
+  enemyAttack: 19
+  bpCost: 30
   attackerFX: {fileID: 100002, guid: db50ab1c866680e4bb870bf5eb72dd3d, type: 3}
-  hitFX: {fileID: 0}
+  hitFX: {fileID: 100002, guid: db50ab1c866680e4bb870bf5eb72dd3d, type: 3}

@@ -15,12 +15,12 @@ MonoBehaviour:
   attackName: Dark Heist
   type: 2
   animation: 1
-  baseDamage: 15
+  baseDamage: 90
   baseSpeed: 0
-  playerDefense: 1
-  playerAttack: 1
-  enemyDefense: -1
-  enemyAttack: -1
-  bpCost: 15
+  playerDefense: 10
+  playerAttack: 10
+  enemyDefense: 10
+  enemyAttack: 10
+  bpCost: 35
   attackerFX: {fileID: 100004, guid: 7867af58a6ec48846ae807eb4022fbaa, type: 3}
-  hitFX: {fileID: 0}
+  hitFX: {fileID: 1280141305896002, guid: e473029e4c70ad543a6879b82a732f4f, type: 3}

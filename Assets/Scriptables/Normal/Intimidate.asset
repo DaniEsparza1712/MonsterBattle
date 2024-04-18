@@ -15,12 +15,12 @@ MonoBehaviour:
   attackName: Intimidate
   type: 0
   animation: 1
-  baseDamage: 7
+  baseDamage: 60
   baseSpeed: 0
   playerDefense: 0
   playerAttack: 0
-  enemyDefense: -1
+  enemyDefense: 20
   enemyAttack: 0
-  bpCost: 5
+  bpCost: 25
   attackerFX: {fileID: 100000, guid: d4f5579fb5da2f646a0c2bee91bdf6b5, type: 3}
-  hitFX: {fileID: 0}
+  hitFX: {fileID: 100000, guid: d4f5579fb5da2f646a0c2bee91bdf6b5, type: 3}

@@ -15,7 +15,7 @@ MonoBehaviour:
   attackName: Rockslide
   type: 5
   animation: 0
-  baseDamage: 30
+  baseDamage: 190
   baseSpeed: 0
   playerDefense: 0
   playerAttack: 0

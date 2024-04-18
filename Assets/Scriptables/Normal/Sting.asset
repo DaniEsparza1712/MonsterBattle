@@ -15,12 +15,12 @@ MonoBehaviour:
   attackName: Sting
   type: 0
   animation: 0
-  baseDamage: 5
+  baseDamage: 80
   baseSpeed: 0
   playerDefense: 0
   playerAttack: 0
-  enemyDefense: -1
-  enemyAttack: -1
+  enemyDefense: 5
+  enemyAttack: 0
   bpCost: 0
   attackerFX: {fileID: 4021103657954561961, guid: 5c755f9bc5253ea418e919994537dcc7, type: 3}
-  hitFX: {fileID: 0}
+  hitFX: {fileID: 4021103657954561961, guid: 5c755f9bc5253ea418e919994537dcc7, type: 3}

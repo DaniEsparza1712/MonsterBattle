@@ -653,13 +653,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monsterName: Brawlspore
   type: 0
-  defense: 0
-  attack: 0
+  defense: 66
+  attack: 83
   speed: 0
   attacks:
   - {fileID: 11400000, guid: a166a1622d7aaa74185d1be7ea0bb7f6, type: 2}
   - {fileID: 11400000, guid: 4715a694d7f40c34c9479670bd7cc338, type: 2}
-  - {fileID: 11400000, guid: 5b6337936de5da948b38d90f0e53f86e, type: 2}
+  - {fileID: 11400000, guid: 1c6c337f9ff48344b879325ce8c76fde, type: 2}
   - {fileID: 11400000, guid: 509b54e69c9d59740b79e529cf6e565c, type: 2}
 --- !u!114 &7020255673100523294
 MonoBehaviour:
@@ -687,7 +687,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54a64d23d9627f34f9d7f5f26f9440e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalBP: 90
+  totalBP: 120
   currentBP: 0
 --- !u!1 &8050738961572063593
 GameObject:

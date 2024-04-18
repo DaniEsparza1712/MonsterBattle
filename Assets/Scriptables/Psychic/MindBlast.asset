@@ -15,7 +15,7 @@ MonoBehaviour:
   attackName: Mind Blast
   type: 1
   animation: 0
-  baseDamage: 15
+  baseDamage: 160
   baseSpeed: 0
   playerDefense: 0
   playerAttack: 0
@@ -23,4 +23,4 @@ MonoBehaviour:
   enemyAttack: 0
   bpCost: 15
   attackerFX: {fileID: 8771972552311404799, guid: bbf9e36a48d6c5648a13889afab076fd, type: 3}
-  hitFX: {fileID: 0}
+  hitFX: {fileID: 8771972552311404799, guid: bbf9e36a48d6c5648a13889afab076fd, type: 3}

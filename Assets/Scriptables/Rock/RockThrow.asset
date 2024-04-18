@@ -15,12 +15,12 @@ MonoBehaviour:
   attackName: Rock Throw
   type: 5
   animation: 0
-  baseDamage: 15
+  baseDamage: 170
   baseSpeed: 0
   playerDefense: 0
   playerAttack: 0
   enemyDefense: 0
   enemyAttack: 0
-  bpCost: 10
+  bpCost: 15
   attackerFX: {fileID: 1462327970484030, guid: f01c1eba69de19e44b04d8d651aaac37, type: 3}
   hitFX: {fileID: 1462327970484030, guid: f01c1eba69de19e44b04d8d651aaac37, type: 3}

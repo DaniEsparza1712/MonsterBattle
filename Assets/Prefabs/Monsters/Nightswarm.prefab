@@ -422,9 +422,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monsterName: Nightswarm
-  type: 0
-  defense: 0
-  attack: 0
+  type: 2
+  defense: 60
+  attack: 90
   speed: 0
   attacks:
   - {fileID: 11400000, guid: fcd57f3fb40540b4ebf0d8838733c62d, type: 2}
@@ -443,7 +443,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25a9d2085feb5f34bbc15d211b4843e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalLife: 70
+  totalLife: 95
   currentLife: 0
 --- !u!114 &-2948631388044143371
 MonoBehaviour:

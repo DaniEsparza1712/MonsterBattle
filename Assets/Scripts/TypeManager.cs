@@ -15,13 +15,4 @@ public class TypeManager
         Plant,
         Rock
     }
-
-    public readonly Dictionary<Type, Type> Weaknesses = new Dictionary<Type, Type>()
-    {
-        {Type.Psychic, Type.Dark},
-        {Type.Dark, Type.Psychic},
-        {Type.Air, Type.Rock},
-        {Type.Plant, Type.Air},
-        {Type.Rock, Type.Plant}
-    };
 }
