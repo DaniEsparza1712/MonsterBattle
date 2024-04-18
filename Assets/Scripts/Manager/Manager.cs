@@ -6,6 +6,7 @@ using Random = UnityEngine.Random;
 public class Manager : MonoBehaviour
 {
     public Server server;
+    public Client client;
     public PlayerManager localPlayer;
     public PlayerManager opponent;
     public List<Attack> attacks = new List<Attack>();
@@ -31,12 +32,14 @@ public class Manager : MonoBehaviour
 
     public void ReceiveAttackThread()
     {
-        StartCoroutine(server.ReceiveThread());
+        int playerType = PlayerPrefs.GetInt("Type", 1);
+        StartCoroutine(playerType == 0 ? server.ReceiveThread() : client.ReceiveThread());
     }
 
     public void OpponentSendAttackFX()
     {
-        var attack = AttacksManager.Instance.Attacks[server.receivedValue];
+        int playerType = PlayerPrefs.GetInt("Type", 1);
+        var attack = AttacksManager.Instance.Attacks[playerType == 0 ? server.receivedValue : client.receivedValue];
         var opponentMonster = opponent.activeMonster;
         opponentMonster.GetComponent<Animator>().SetTrigger(attack.animation.ToString());
         Instantiate(attack.attackerFX, opponent.transform);
@@ -44,7 +47,8 @@ public class Manager : MonoBehaviour
 
     public void ReceiveFX()
     {
-        _opponentAttack = AttacksManager.Instance.Attacks[server.receivedValue];
+        int playerType = PlayerPrefs.GetInt("Type", 1);
+        _opponentAttack = AttacksManager.Instance.Attacks[playerType == 0 ? server.receivedValue : client.receivedValue];
         
         var localMonster = localPlayer.activeMonster.GetComponent<Monster>();
         var opponentMonster = opponent.activeMonster.GetComponent<Monster>();
@@ -67,7 +71,8 @@ public class Manager : MonoBehaviour
     {
         var localMonster = localPlayer.activeMonster.GetComponent<Monster>();
         var opponentMonster = opponent.activeMonster.GetComponent<Monster>();
-        
+        int playerType = PlayerPrefs.GetInt("Type", 1);
+
         localMonster.AddAttack(_localAttack.playerAttack);
         localMonster.AddDefense(_localAttack.playerDefense);
         
@@ -81,7 +86,14 @@ public class Manager : MonoBehaviour
         opponent.activeMonster.GetComponent<LifeSystem>().SubtractLife(damage);
         
         //Send to Client
-        StartCoroutine(server.SendThread(AttacksManager.Instance.Attacks.IndexOf(_localAttack)));
+        if (playerType == 0)
+        {
+            StartCoroutine(server.SendThread(AttacksManager.Instance.Attacks.IndexOf(_localAttack)));
+        }
+        else
+        {
+            StartCoroutine(client.SendThread(AttacksManager.Instance.Attacks.IndexOf(_localAttack)));
+        }
     }
 
     private void Update()

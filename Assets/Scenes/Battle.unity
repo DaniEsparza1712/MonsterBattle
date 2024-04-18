@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4465773, g: 0.49641234, b: 0.5748169, a: 1}
+  m_IndirectSpecularColor: {r: 0.4465776, g: 0.49641293, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1727,6 +1727,7 @@ GameObject:
   - component: {fileID: 853650193}
   - component: {fileID: 853650194}
   - component: {fileID: 853650195}
+  - component: {fileID: 853650196}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -1762,6 +1763,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   server: {fileID: 853650195}
+  client: {fileID: 853650196}
   localPlayer: {fileID: 307317671}
   opponent: {fileID: 1644466825}
   attacks:
@@ -1839,6 +1841,61 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  receivedValue: 0
+--- !u!114 &853650196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 853650191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59f98b5972838f748ab763efe221c34a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onSendSuccessful:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 307317674}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: OpponentRegisteredAttack
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onReceiveSuccessful:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 307317674}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: LocalRegisteredAttack
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 853650194}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: OpponentSendAttackFX
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

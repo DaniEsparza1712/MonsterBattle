@@ -11,6 +11,7 @@ public class MenuFunctions : MonoBehaviour
     public TMP_Text joinCodeTMP;
     public TMP_InputField joinCodeInput;
     public Server server;
+    public Client client;
     
     public void GenerateJoinCode()
     {
@@ -26,13 +27,24 @@ public class MenuFunctions : MonoBehaviour
 
     public void SendJoinCode()
     {
-        server.SetPortPref(8081);
-        StartCoroutine(server.SendMessageToServer(GetJoinCode));
+        Debug.Log("d");
+        client.SetPortPref(8080);
+        StartCoroutine(client.SendMessageToServer(GetJoinCode));
     }
 
     public void ListenForJoinCode()
     {
         server.SetPortPref(8080);
         StartCoroutine(server.ExpectMessageFromServer(int.Parse(GetJoinCode)));
+    }
+
+    public void setServerPlayerType()
+    {
+        PlayerPrefs.SetInt("Type", 0);
+    }
+
+    public void setClientPlayerType()
+    {
+        PlayerPrefs.SetInt("Type", 1);
     }
 }

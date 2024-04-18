@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -672,6 +672,7 @@ GameObject:
   - component: {fileID: 484506011}
   - component: {fileID: 484506010}
   - component: {fileID: 484506013}
+  - component: {fileID: 484506014}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -694,6 +695,7 @@ MonoBehaviour:
   joinCodeTMP: {fileID: 1655547998}
   joinCodeInput: {fileID: 2017535175}
   server: {fileID: 484506011}
+  client: {fileID: 484506014}
 --- !u!114 &484506011
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -764,6 +766,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d128f6236d094d438954869be764b6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &484506014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 484506009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59f98b5972838f748ab763efe221c34a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onSendSuccessful:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 484506013}
+        m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
+        m_MethodName: LoadLevel
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Battle
+          m_BoolArgument: 0
+        m_CallState: 2
+  onReceiveSuccessful:
+    m_PersistentCalls:
+      m_Calls: []
+  receivedValue: 0
 --- !u!1 &533134347
 GameObject:
   m_ObjectHideFlags: 0
@@ -1043,6 +1076,18 @@ MonoBehaviour:
       - m_Target: {fileID: 484506010}
         m_TargetAssemblyTypeName: MenuFunctions, Assembly-CSharp
         m_MethodName: ListenForJoinCode
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 484506010}
+        m_TargetAssemblyTypeName: MenuFunctions, Assembly-CSharp
+        m_MethodName: setServerPlayerType
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1889,6 +1934,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: JoinRoomEnter
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 484506010}
+        m_TargetAssemblyTypeName: MenuFunctions, Assembly-CSharp
+        m_MethodName: setClientPlayerType
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1153851162
