@@ -21,7 +21,7 @@ public class Client : MonoBehaviour
 
     // Import the receiveMessageFromClient function
     [DllImport("client.dll")] // Change "yourLibraryName" to the name of your C library
-    public static extern int recieveMessageFromServer();
+    public static extern int receiveMessageFromServer();
 
     // Import the closeConnection function
     [DllImport("client.dll")] // Change "yourLibraryName" to the name of your C library
@@ -92,14 +92,13 @@ public class Client : MonoBehaviour
         
         // Call the sendMessageToClient function
         sendMessageToServer(attackIndex.ToString());
-        var clientConfirmation = recieveMessageFromServer();
-        Debug.Log($"Received: {clientConfirmation}");
+        /*var clientConfirmation = recieveMessageFromServer();
+        Debug.Log($"Received: {clientConfirmation}");*/
         closeConnection();
     }
 
     private void SendToClientUDP(string msg)
     {
-        Debug.Log(_port);
         setupClient("127.0.0.1", "8080");
         
         // Call the sendMessageToClient function
@@ -112,9 +111,7 @@ public class Client : MonoBehaviour
         setupClient("127.0.0.1", "8080");
         
         // Call the receiveMessageFromClient function
-        receivedValue = recieveMessageFromServer();
-        Debug.Log("Received value: " + receivedValue);
-        sendMessageToServer("90");
+        receivedValue = receiveMessageFromServer();
         closeConnection();
     }
 
@@ -123,14 +120,8 @@ public class Client : MonoBehaviour
         setupClient("127.0.0.1", "8080");
         
         // Call the receiveMessageFromClient function
-        receivedValue = recieveMessageFromServer();
+        receivedValue = receiveMessageFromServer();
         Debug.Log("Received value: " + receivedValue);
         closeConnection();
-    }
-
-    public void Close()
-    {
-        closeConnection();
-        Debug.Log("Closed");
     }
 }

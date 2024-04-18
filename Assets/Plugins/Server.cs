@@ -92,8 +92,6 @@ public class Server : MonoBehaviour
         
         // Call the sendMessageToClient function
         sendMessageToClient(attackIndex.ToString());
-        var clientConfirmation = receiveMessageFromClient();
-        Debug.Log($"Received: {clientConfirmation}");
         closeConnection();
     }
 
@@ -112,8 +110,6 @@ public class Server : MonoBehaviour
         
         // Call the receiveMessageFromClient function
         receivedValue = receiveMessageFromClient();
-        Debug.Log("Received value: " + receivedValue);
-        sendMessageToClient("90");
         closeConnection();
     }
 
